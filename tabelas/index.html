@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        table {
+            border-collapse: collapse; 
+            width: 800%;
+        }
+
+        table td, table th {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: left;
+        }
+
+        table th:hover {
+            color: white;
+        }
+        
+        table td:hover {
+            background: linear-gradient(45deg, #35353d, #ccc);
+        }
+
+
+        table caption {
+            caption-side: bottom;
+            text-align: right;
+            font-style: italic;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        tfoot td, table th {
+            color: white;
+            background: linear-gradient(45deg, #0b0450, #ffffff);
+        }
+
+        tfoot td {
+            font-style: italic;
+        }
+        /* Criando responsividade para dispositivos móveis nosso overflow-x:auto, 
+        faz com que tenha um scroll abaixo da tabela para podermos */
+        .responsive-table {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet cons</p>
+    <div class="responsive-table">
+    <table>
+        <caption>Uma descrição para tabela</caption>
+        <thead> <!--Cabeçalho da tabela-->
+            <tr> <!--Line-->
+                <th>Título 1</th> <!--Column-->
+                <th>Título 2</th> <!--Column-->
+                <th>Título 3</th> <!--Column-->
+            </tr>
+        </thead>
+        <tbody>   <!--Corpo da tabela-->
+            <tr> <!--Linhas da tabela-->
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+
+            <tr> <!--Linhas da tabela-->
+                <td colspan="2" rowspan="2">OCUPAR COLUNAS</td> <!--Ocupando colunas-->
+                <td>Corpo 2</td>
+            </tr>
+
+            <tr> <!--Linhas da tabela-->
+                <td>Corpo 3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr> <!--Linhas da tabela-->
+                <td colspan="2" rowspan="2"></td>
+                <td>TOTAL:</td>
+            </tr>
+            <tr> <!--Linhas da tabela-->
+                <td>R$$$$</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+</html>
