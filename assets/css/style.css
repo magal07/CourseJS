@@ -1,3 +1,54 @@
- * { 
-    
+ * {
+     margin: 0;
+     padding: 0;
+ }
+
+ html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+ }
+
+ .grid {
+    padding: 15px;
+    box-sizing: border-box;
+ }
+
+ .grid::after {
+     content: '';
+     display: block;
+     clear: both;
+ }
+
+ .grid .col {
+    box-sizing: border-box;
+     width: 33.33%;
+     height: 300px;
+     float: left;
+     padding: 20px;
+ }
+ .grid .col {
+     height: 100vh;
+     background: red;
+ }
+ .pai  {
+    width: 50rem;
+    height: 100vh;
+    background: yellow;
+    overflow: hidden;
+ }
+
+ .pai > div {
+    width: 50%;
+    height: 50rem;
+    background: blue;;
+ }
+
+ p {
+    font-size: 1.6rem;
+ }
+    .color-one {
+        background: blue;
+ }
+    .color-two {
+        background: violet;
  }
