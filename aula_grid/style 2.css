@@ -1,0 +1,68 @@
+* {
+   margin: 0; /* Remove margens padrão de todos os elementos */
+   padding: 0; /* Remove preenchimento padrão de todos os elementos */
+   box-sizing: border-box; /* Inclui borda e preenchimento no tamanho total do elemento */
+}
+
+body {
+   font-size: 40px;
+  font-family: sans-serif; /* Define a família de fontes padrão como sans-serif */
+}
+
+.grid {
+   /* grid-template-columns: repeat(3, 1fr 2fr); Utilizando repeat e fragmentos para dividir a grid  */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* ajuste para celulares com auto-fill e minmax */
+   /* display: grid; ajuste para celulares com auto-fill e minmax */
+   grid-template-columns: 
+   [um] 1fr
+    [dois] 1fr
+     [tres] 1fr 
+      [quatro];
+   grid-template-rows: 
+   [um] 1fr
+    [dois] 1fr
+     [tres] 1fr 
+      [quatro];
+   /* grid-template-rows: repeat(2, 1fr 2fr); alinhando linhas */
+   display: grid;
+   grid-gap: 30px;
+
+}
+
+.grid div{
+
+   background: green;
+   min-height: 100px;
+}
+/* MODO OLD 
+.grid div:nth-child(5){
+   background: darkred;
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-row-start: 3;
+   grid-row-end: 6;
+} */
+
+.grid div:nth-child(5){
+   background: darkred;
+   grid-column: span 2;
+   /* grid-row: span 1;
+   grid-column: span 2; */
+   /* USANDO VARIAVEIS UM, QUATRO */
+   /* ATALHOS PARA ISTO
+   grid-column-start: um;
+   grid-column-end: quatro; */
+   /* grid-column: um / tres; <- isto ou:  */
+   /* Column e Rows , porém existe 1 atalho melhor, sendo: 
+   grid-column: span 2 / 2; /* spans 
+   grid-row: um / quatro; */
+   /* grid-area: um / um / quatro / quatro <-- usando variavel */
+    /* grid-area: 1 / 1 / 3 / 3 */
+}
+
+
+@media (max-width: 768px) {
+   .grid div:nth-child(5){
+      background: darkred;
+   }
+}
