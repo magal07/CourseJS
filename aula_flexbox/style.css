@@ -1,0 +1,35 @@
+* {
+   margin: 0; /* Remove margens padrão de todos os elementos */
+   padding: 0; /* Remove preenchimento padrão de todos os elementos */
+   box-sizing: border-box; /* Inclui borda e preenchimento no tamanho total do elemento */
+}
+
+html {
+  font-family: sans-serif; /* Define a família de fontes padrão como sans-serif */
+}
+
+.flex-container {
+ display: flex; /* Define um contêiner flexível */
+ /* flex-direction: row; *//* Define a direção do eixo principal como linha (horizontal) */
+ justify-content: space-between; /* Distribui o espaço entre os itens */
+ align-items: flex-start;/* Alinha os itens no início do eixo transversal */
+ background: yellow; /* Define a cor de fundo do contêiner como amarelo */
+ height: 800px;/* Define a altura do contêiner como 500px */
+ flex-flow: row nowwrap; /* Define o fluxo flexível como linha e permite a quebra em várias linhas */
+}
+
+.flex-item {
+ /* flex-grow: 1; /* Permite que o item cresça para preencher o espaço disponível 
+ flex-basis: 320px; Define a base do tamanho flexível como 320px 
+ flex-shrink: 0; /* Impede que o item encolha  */
+ /* substituindo tudo acima por flex */
+ flex: 1 1 320px; /* Define o item como flexível, 1 de flex grow, 320 de basis 1 de shrink */
+ /* height: 30px; Define a altura do item como 200px */
+ width: 100%; /* Define a largura do item como 100% */
+ color: #fff; /* Define a cor do texto como branco */
+ background: red; /* Define a cor de fundo do item como vermelho */
+}
+
+.flex-item:nth-child(1) {
+   order: 0; /* Define a ordem do item como 0º */
+}

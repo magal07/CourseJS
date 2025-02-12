@@ -1,0 +1,39 @@
+* {
+   margin: 0; /* Remove margens padrão de todos os elementos */
+   padding: 0; /* Remove preenchimento padrão de todos os elementos */
+   box-sizing: border-box; /* Inclui borda e preenchimento no tamanho total do elemento */
+}
+
+body {
+   font-size: 24px;
+  font-family: sans-serif; /* Define a família de fontes padrão como sans-serif */
+}
+
+p {
+   margin: 0 0 24px; 
+}
+
+.two-columns {
+   display: flex;
+}
+
+.two-columns .col {
+   display: flex;
+   flex-direction: column;
+   background: green;  
+   margin: 15px;
+   padding: 30px;
+}
+
+.gallery {
+   flex-flow: row wrap;
+   display: flex;
+}
+
+.gallery .img {
+   flex: 1 0 20%;
+   width: 100%;
+   height: 50px;
+   background: blue;
+   margin: 10px;
+}

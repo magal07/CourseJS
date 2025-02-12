@@ -1,54 +1,50 @@
- * {
-     margin: 0;
-     padding: 0;
- }
+* {
+   margin: 0; /* Remove margens padrão de todos os elementos */
+   padding: 0; /* Remove preenchimento padrão de todos os elementos */
+   box-sizing: border-box; /* Inclui borda e preenchimento no tamanho total do elemento */
+}
 
- html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
- }
+body {
+   font-size: 40px;
+  font-family: sans-serif; /* Define a família de fontes padrão como sans-serif */
+}
 
- .grid {
-    padding: 15px;
-    box-sizing: border-box;
- }
+.grid {
+   /* grid-template-columns: repeat(3, 1fr 2fr); Utilizando repeat e fragmentos para dividir a grid  */
+   /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); ajuste para celulares com auto-fill e minmax */
+   /* display: grid; ajuste para celulares com auto-fill e minmax */
+   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+   /* grid-template-rows: repeat(2, 1fr 2fr); alinhando linhas */
+   display: grid;
+   gap: 30px;
+   max-width: 1200px;
+   margin: 0 auto;
+}
 
- .grid::after {
-     content: '';
-     display: block;
-     clear: both;
- }
+.grid div{
 
- .grid .col {
-    box-sizing: border-box;
-     width: 33.33%;
-     height: 300px;
-     float: left;
-     padding: 20px;
- }
- .grid .col {
-     height: 100vh;
-     background: red;
- }
- .pai  {
-    width: 50rem;
-    height: 100vh;
-    background: yellow;
-    overflow: hidden;
- }
+   background: green;
+   min-height: 100px;
+}
+/* MODO OLD 
+.grid div:nth-child(5){
+   background: darkred;
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-row-start: 3;
+   grid-row-end: 6;
+} */
 
- .pai > div {
-    width: 50%;
-    height: 50rem;
-    background: blue;;
- }
+.grid div:nth-child(5){
+   background: darkred;
+   grid-row: span 1;
+   grid-column: span 2;
+}
 
- p {
-    font-size: 1.6rem;
- }
-    .color-one {
-        background: blue;
- }
-    .color-two {
-        background: violet;
- }
+
+@media (max-width: 768px) {
+   .grid div:nth-child(5){
+      background: darkred;
+      grid-column: span 1;
+   }
+}
